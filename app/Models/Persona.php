@@ -17,4 +17,7 @@ class Persona extends Model
         'email',
     ];
 
+    public function asistencias(){
+        return $this->hasMany(AsistenciaPersonal::class);
+    }
 }
