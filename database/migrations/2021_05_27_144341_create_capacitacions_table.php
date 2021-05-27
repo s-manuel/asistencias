@@ -13,8 +13,15 @@ class CreateCapacitacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('capacitacions', function (Blueprint $table) {
+        Schema::create('capacitaciones', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('persona_id');
+            $table->foreign("persona_id")->references("id")->on("personas");
+            $table->date("fecha");
+            $table->text("nombre");
+            $table->integer("horas")->defauld(0);
+            $table->string("lugar");
+            $table->string("institucion")->nullable();
             $table->timestamps();
         });
     }

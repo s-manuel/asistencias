@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Capacitacion;
 use Illuminate\Database\Seeder;
 
 class CapacitacionSeeder extends Seeder
@@ -13,6 +14,6 @@ class CapacitacionSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Capacitacion::factory(10)->create();
     }
 }

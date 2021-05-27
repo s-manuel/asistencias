@@ -3,7 +3,10 @@
 namespace Database\Factories;
 
 use App\Models\Capacitacion;
+use App\Models\Persona;
 use Illuminate\Database\Eloquent\Factories\Factory;
+
+use function Ramsey\Uuid\v1;
 
 class CapacitacionFactory extends Factory
 {
@@ -21,8 +24,15 @@ class CapacitacionFactory extends Factory
      */
     public function definition()
     {
+        $personas = Persona::select('id')->get();
+
         return [
-            //
+            'persona_id'=>$this->faker->randomElement($personas)->id,
+            'fecha'=>$this->faker->date,
+            'nombre'=>$this->faker->name,
+            'horas'=>rand(10,50),   
+            'lugar'=>$this->faker->city,
+            'institucion'=>$this->faker->company,
         ];
     }
 }

@@ -13,6 +13,7 @@ class Habilidad extends Model
         'nombre',
         'porcentaje',
         'orden',
+        'persona_id'
     ];
 
     public function persona(){
