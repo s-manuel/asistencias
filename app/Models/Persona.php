@@ -10,8 +10,8 @@ class Persona extends Model
     use HasFactory;
     protected $table = "personas";
     protected $fillable = [
-        'nombre',
-        'apllido',
+        'nombres',
+        'apellido',
         'cedula',
         'edad',
         'email',
@@ -19,5 +19,10 @@ class Persona extends Model
 
     public function asistencias(){
         return $this->hasMany(AsistenciaPersonal::class);
+    }
+
+    public function habilidades()
+    {
+        return $this->hasMany(Habilidad::class);
     }
 }

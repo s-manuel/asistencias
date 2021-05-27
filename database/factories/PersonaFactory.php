@@ -22,8 +22,8 @@ class PersonaFactory extends Factory
     public function definition()
     {
         return [
-            'nombre'=>$this->faker->name,
-            'apllido'=>$this->faker->lastName,
+            'nombres'=>$this->faker->name,
+            'apellidos'=>$this->faker->lastName,
             'cedula'=> rand(1,9999999999999),
             'edad'=>rand(18,70),
             'email'=>$this->faker->email,
